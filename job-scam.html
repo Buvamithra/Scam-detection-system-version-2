@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Scam Analyzer | ScamGuard AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/analyzer.css') }}">
+  <script defer src="{{ url_for('static', filename='js/job.js') }}"></script>
+</head>
+
+<body>
+
+<header class="top-bar">
+  🛡️ ScamGuard AI — Job Scam Analyzer
+</header>
+
+<section class="analyzer-container">
+
+  <!-- FORM -->
+ <div id="formBox" class="glass-card premium-form">
+
+  <div class="form-header">
+    <h1>💼 Job Scam Analysis</h1>
+    <p>We analyze patterns, payments, emails & documents deeply.</p>
+  </div>
+
+  <div class="form-grid">
+
+    <div class="form-group">
+      <label>Company Name</label>
+      <input id="company" placeholder="Eg: ABC Technologies Pvt Ltd">
+    </div>
+
+    <div class="form-group">
+      <label>Recruiter Email</label>
+      <input id="email" placeholder="Eg: hr@company.com">
+    </div>
+
+    <div class="form-group">
+      <label>Asked for Payment?</label>
+      <select id="payment">
+        <option value="">Select</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Amount Requested</label>
+      <input id="amount" placeholder="Eg: ₹2,000">
+    </div>
+
+    <div class="form-group full">
+      <label>Upload Documents (Offer letter, screenshots)</label>
+      <input type="file" id="docs" multiple>
+    </div>
+
+  </div>
+
+  <button class="analyze-btn" onclick="startAnalysis()">
+    🔍 Analyze Job Offer
+  </button>
+
+</div>
+
+  <!-- ANALYZING -->
+  <!-- ANALYZING SCREEN -->
+<div id="loadingBox" class="glass-card hidden analyzing-box">
+  <h2 class="pulse">🔍 Analyzing job offer…</h2>
+
+  <ul class="analyze-steps">
+    <li class="active">Checking email authenticity</li>
+    <li>Scanning payment patterns</li>
+    <li>Verifying company signals</li>
+    <li>Analyzing uploaded documents</li>
+    <li>Calculating scam risk</li>
+  </ul>
+</div>
+
+
+  <!-- RESULT -->
+  <!-- RESULT -->
+<div id="resultBox" class="hidden">
+  <div class="circle-wrapper">
+    <div class="scan-line"></div>
+
+
+    <svg width="240" height="240">
+      <!-- background -->
+      <circle
+        cx="120"
+        cy="120"
+        r="100"
+        stroke="#1f2937"
+        stroke-width="18"
+        fill="none"
+      />
+
+      <!-- animated -->
+      <circle
+        id="riskCircle"
+        cx="120"
+        cy="120"
+        r="100"
+        stroke="#22c55e"
+        stroke-width="18"
+        fill="none"
+        stroke-linecap="round"
+        stroke-dasharray="628"
+        stroke-dashoffset="628"
+      />
+    </svg>
+
+    <div class="risk-text">
+      <div id="riskValue">0%</div>
+      <div id="riskStatus">ANALYZING</div>
+    </div>
+
+  </div>
+
+  <ul id="reasonList"></ul>
+</div>
+
+
+  <div id="actionBox" class="hidden">
+    <a href="https://cybercrime.gov.in" target="_blank" class="danger-btn">
+      🚨 Report to Cyber Crime
+    </a>
+    <button class="flag-btn">🚩 Mark Company & Email as Scam</button>
+  </div>
+
+</div>
+
+
+</section>
+<div class="particles"></div>
+
+
+</body>
+</html>

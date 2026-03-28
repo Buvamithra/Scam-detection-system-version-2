@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ScamGuard AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      🛡️ <span>ScamGuard</span> AI
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <!-- LEFT CONTENT -->
+    <div class="hero-left">
+      <h1 class="hero-title">
+  <span class="fade-up">Scams look real.</span><br>
+  <span class="glow">We help you see the truth.</span>
+</h1>
+
+
+      <p>
+
+        Job scams. UPI frauds. Fake offers.<br>
+        ScamGuard AI detects, explains, and guides you — so you stay safe.
+      </p>
+
+      <button class="cta-btn">Get Started</button>
+    </div>
+
+    <!-- RIGHT HERO CONTENT -->
+<div class="hero-right">
+  <!-- CHATBOX -->
+  <div class="chatbox">
+    <div class="bot-msg">
+      Hi 👋 I’m your Scam Safety Companion.<br>
+      Choose a scam type to begin.
+    </div>
+
+    <input type="text" placeholder="Type here..." />
+  </div>
+</div>
+
+
+<!-- FLOATING ROBOT VIDEO -->
+<div class="robot-container">
+  <video autoplay loop muted playsinline>
+  <source src="{{ url_for('static', filename='videos/robot.mp4') }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+</div>
+
+
+  </section>
+  <section class="scam-types">
+  <h2 class="section-title">Common Scam Types</h2>
+
+  <div class="scam-cards">
+
+    <!-- JOB SCAM -->
+<div class="scam-card neon-blue"
+     onclick="window.location.href='job-scam'">
+  <div class="card-glow"></div>
+  <img src="{{ url_for('static', filename='images/job scam.png') }}">
+  <h3>JOB SCAM</h3>
+  <p>Fake recruiters demanding money.</p>
+</div>
+
+<!-- UPI SCAM -->
+<div class="scam-card neon-green"
+     onclick="window.location.href='/upi-scam'">
+  <div class="card-glow"></div>
+  <img src="{{ url_for('static', filename='images/job_scam.jpg') }}">
+  <h3>UPI FRAUD</h3>
+  <p>Collect requests pretending to pay you.</p>
+</div>
+
+<!-- OFFER SCAM -->
+<div class="scam-card neon-pink"
+     onclick="window.location.href='/offer-scam'">
+  <div class="card-glow"></div>
+  <img src="{{ url_for('static', filename='images/free_offer.png') }}">
+  <h3>FREE OFFER SCAM</h3>
+  <p>Fake prizes and giveaways.</p>
+</div>
+
+  </div>
+</section>
+<!-- ================= CYBER CRIME HELP SECTION ================= -->
+
+<section class="cyber-help-section">
+
+    <div class="cyber-card">
+
+        <h2>🚨 Report Cyber Crime Instantly</h2>
+        <p class="subtitle">
+            If you suspect fraud, report immediately to the official Cyber Crime Portal.
+        </p>
+
+        <a href="https://www.cybercrime.gov.in/" target="_blank" class="cyber-btn">
+            🔐 Go to National Cyber Crime Portal
+        </a>
+
+        <div class="divider"></div>
+
+        <h3>📝 How to File a Complaint</h3>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="icon">1️⃣</div>
+                <div>
+                    <h4>Visit the Portal</h4>
+                    <p>Click the button above and choose "Report Other Cyber Crime".</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="icon">2️⃣</div>
+                <div>
+                    <h4>Create/Login Account</h4>
+                    <p>Register using your mobile number and verify with OTP.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="icon">3️⃣</div>
+                <div>
+                    <h4>Fill Complaint Details</h4>
+                    <p>Provide transaction ID, screenshots, UPI ID, website URL, and description.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="icon">4️⃣</div>
+                <div>
+                    <h4>Submit & Track</h4>
+                    <p>After submission, you will receive a complaint ID to track status.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tips-box">
+            <h4>⚡ Important Tips</h4>
+            <ul>
+                <li>📸 Always take screenshots of fraud messages</li>
+                <li>💳 Never share OTP or banking PIN</li>
+                <li>⏳ Report within 24 hours for better recovery chances</li>
+                <li>📞 Emergency Financial Fraud Helpline: <strong>1930</strong></li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+
+<a href="tel:1930" class="emergency-btn">📞 1930</a>
+
+
+
+  <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+<script src="{{ url_for('static', filename='js/robot.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UPI Scam Detection System</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upi.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
+</head>
+
+<body>
+
+<div class="background-glow"></div>
+
+<h1 class="title">UPI SCAM DETECTION SYSTEM</h1>
+
+<div class="container">
+
+    <!-- LEFT CARD -->
+    <div class="card glass">
+        <h2>Transaction Simulation</h2>
+        
+        <input type="text" id="upi_id" placeholder="Enter UPI ID (example@upi)" />
+        <input type="text" id="location" placeholder="Enter Location (City)" />
+        <input type="number" id="amount" placeholder="Amount">
+
+
+
+<input type="number" id="location_risk" placeholder="Location Risk (0-100)">
+
+
+<select id="is_new_upi">
+    <option value="0">Existing UPI</option>
+    <option value="1">New UPI</option>
+</select>
+
+<select id="is_blacklisted">
+    <option value="0">Not Blacklisted</option>
+    <option value="1">Blacklisted</option>
+</select>
+
+<select id="night_transaction">
+    <option value="0">Day Transaction</option>
+    <option value="1">Night Transaction</option>
+</select>
+
+        <h3 id="riskText">Risk Level: --</h3>
+        <button onclick="analyzeTransaction()" class="analyze-btn">
+    Analyze Transaction
+</button>
+
+    </div>
+
+    <!-- DONUT CARD -->
+    <div class="donut-container">
+    <canvas id="riskChart"></canvas>
+    <div id="riskLabel" class="center-text">SAFE</div>
+</div>
+
+
+    <!-- HEATMAP CARD -->
+    <div class="card glass large">
+        <h2>Fraud Heat Map</h2>
+        <div id="map"></div>
+    </div>
+
+</div>
+<button onclick="goToCyberCrime()">Report to Cyber Crime</button>
+
+
+<script src="{{ url_for('static', filename='js/upi.js') }}"></script>
+</body>
+</html>

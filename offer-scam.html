@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Free Offer Scam Detection</title>
+    <link rel="stylesheet" href="/static/css/offer.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<h1 class="glitch" data-text="FREE OFFER SCAM DETECTION">
+    FREE OFFER SCAM DETECTION
+</h1>
+
+<div class="container">
+
+    <!-- Input Card -->
+    <div class="card">
+        <h2>Analyze Offer</h2>
+
+        <textarea id="offerText" placeholder="Paste the offer message here..."></textarea>
+
+        <input type="text" id="websiteInput" placeholder="Enter website URL (example.com)">
+
+        <button onclick="analyzeOffer()">Analyze Offer</button>
+    </div>
+
+    <!-- Donut Card -->
+    <div class="card">
+        <h2>Fraud Probability</h2>
+        <div class="donut-wrapper">
+            <canvas id="fraudChart"></canvas>
+            <div id="donutText">0%</div>
+        </div>
+        <div id="resultText"></div>
+    </div>
+
+    <!-- History Logs -->
+    <div class="card">
+        <h2>Recent Analysis Logs</h2>
+        <div id="historyLogs"></div>
+    </div>
+
+    <!-- Scam News -->
+    <div class="card">
+        <h2>Live Scam News</h2>
+        <div id="newsFeed"></div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/static/js/offer.js"></script>
+
+</body>
+</html>
